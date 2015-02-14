@@ -51,8 +51,9 @@ foreach($dataObj as $hustingJSON) {
 			print "practicalities: ". $hustingJSON->practicalities . "\n";
 			print "contactName: ". $hustingJSON->contactName . "\n";
 			print "organisation: ". $hustingJSON->organisation . "\n";
-			print "contactEmail: ". $hustingJSON->contactEmail . "\n";
-			print "contactPhone: ". $hustingJSON->contactPhone . "\n";
+			print "contactEmail: ". str_replace(array('.','@'),array(' dot ',' at '),$hustingJSON->contactEmail) . "\n";
+			// This field is not shown on their site so we won't.
+			// print "contactPhone: ". $hustingJSON->contactPhone . "\n";
 			print "organisedBy: ". $hustingJSON->organisedBy . "\n";
 			print "eventLocation: ". $hustingJSON->eventLocation . "\n";
 			print "constitName: ". $hustingJSON->constitName . "\n";
@@ -60,6 +61,7 @@ foreach($dataObj as $hustingJSON) {
 			print "eventDate: ". $hustingJSON->eventDate . "\n";
 			print "eventTime: ". $hustingJSON->eventTime . "\n";
 			print "url: ". $hustingJSON->url . "\n";
+			print "fallback URL: http://ctbielections.org.uk/ \n";
 			print "\n";
 
 			print "Have you dealbt with this? Y/N \n";
